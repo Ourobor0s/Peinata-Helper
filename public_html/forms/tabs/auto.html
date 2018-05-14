@@ -17,29 +17,29 @@
 
                 </div>
                 <div style="margin-top:5px" class="btn-toolbar">
-                    <div class="input-group" style="margin-right:3px">
+                    <div class="input-group " style="margin-right:3px;">
                         <div class="input-group-prepend">
-                            <div class="input-group-text" >Total Price:</div>
+                            <div class="input-group-text bg-color-mainblue" >Total Price:</div>
                         </div>
-                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.totalPrice | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.totalPrice | euroSymbol" class="form-control bg-color-whiteblue" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                     </div>
                     <div class="input-group" style="margin-right:3px">
                         <div class="input-group-prepend">
-                            <div class="input-group-text" >Discounted Price:</div>
+                            <div class="input-group-text bg-color-mainblue" >Discounted Price:</div>
                         </div>
-                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.discountedPrice | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.discountedPrice | euroSymbol" class="form-control bg-color-whiteblue" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                     </div>
                     <div class="input-group" style="margin-right:3px">
                         <div class="input-group-prepend">
-                            <div class="input-group-text">Peinata Discount:</div>
+                            <div class="input-group-text bg-color-mainblue">Peinata Discount:</div>
                         </div>
-                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.peinataDiscount | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.peinataDiscount | euroSymbol" class="form-control bg-color-whiteblue" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                     </div>
                     <div class="input-group" style="margin-right:3px">
                         <div class="input-group-prepend">
-                            <div class="input-group-text">Discount Percent:</div>
+                            <div class="input-group-text bg-color-mainblue">Discount Percent:</div>
                         </div>
-                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.discountedPercValue | percentSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                        <input type="text" style="width:90px" ng-disabled='true' ng-value="calculations.order.info.discountedPercValue | percentSymbol" class="form-control bg-color-whiteblue" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                     </div>
                 </div>
 
@@ -48,11 +48,11 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <table class="table  table-bordered table-striped">
-                <thead><tr><th>User</th></tr></thead>
-                <tbody>
+            <table class="table table-bordered bg-color-whiteblue">
+                <!--<thead><tr><th class="bg-color-mainblue">User</th></tr></thead>-->
+                <tbody >
                     <!-- repeat -->
-                    <tr ng-repeat="(listName, list) in models.users.lists" >
+                    <tr class="table-borders-white" ng-repeat="(listName, list) in models.users.lists" >
                         <td >
                             <h5 class="card-title">{{listName}}</h5>
                             <div style="min-height:50px !important;"  dnd-list="list">
@@ -77,7 +77,7 @@
         <div class="col-md-4">
             <div class="jumbotron" style="padding:0;">
                 <div ng-repeat="(listName, list) in models.items.lists">
-                    <div  class="card-body simpleDemo">
+                    <div  class="card-body simpleDemo bg-color-whiteblue">
                         <h5 class="card-title">{{listName.replace("_", " ");}}</h5>
                         <ul dnd-list="list" class="list-group list-group-flush">
                             <!-- The dnd-draggable directive makes an element draggable and will

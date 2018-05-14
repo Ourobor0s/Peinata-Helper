@@ -1,27 +1,27 @@
 <div class="modal fade" id="resultsOldSchoolModal" tabindex="-1" role="dialog" aria-labelledby="oldSchoolModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="oldSchoolModalLabel">Results</h4>
+            <div class="modal-header bg-color-mainblue">
+                <h4 class="modal-title bg-color-mainblue" id="oldSchoolModalLabel">Results</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        
             </div>
             <div class="modal-body">
                 <!--<h4 class="modal-title">Results:</h4>-->  
                 <div class="input-group" style="">
                     <div class="input-group-prepend">
-                        <div class="input-group-text">Tips:</div>
+                        <div class="input-group-text bg-color-mainblue">Tips:</div>
                     </div>
                     <input type="number" style="width:80px"  ng-model="calculations.oldSchoolTips" ng-change="calculations.resultsAndTipsOldSchool()" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                 </div>
                 <div class="row">
                     <div class="col-md-9">
                         <table class="table table-bordered">
-                            <thead  class="thead-light">
-                                <tr><th>User</th><th>Price</th><td>Price with Tips</td></tr>
+                            <thead  class="bg-color-mainblue table-borders-mainblue">
+                                <tr><th>User</th><th>Price</th><td><b>Price with Tips</b></td></tr>
                             </thead>
-                            <tbody>
-                                <tr ng-repeat="user_obj in calculations.resultsOldSchoolData.Users" >
-                                    <td>{{user_obj.name}}</td>
+                            <tbody class='bg-color-greyblue '>
+                                <tr class='table-borders-blue' ng-repeat="user_obj in calculations.resultsOldSchoolData.Users" >
+                                    <td><h5>{{user_obj.name}}</h5></td>
                                     <td>{{user_obj.price}} €</td>
                                     <td>{{user_obj.priceFinal}} €</td>
                                 </tr>

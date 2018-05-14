@@ -1,25 +1,25 @@
 <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="resultsModalLabel">Results</h4>
+            <div class="modal-header bg-color-mainblue">
+                <h4 class="modal-title bg-color-mainblue" id="resultsModalLabel">Results</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        
             </div>
             <div class="modal-body">
-                <div class="input-group" style="">
+                <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text" id="btnGroupAddon" >Tips:</div>
+                        <div class="input-group-text bg-color-mainblue" id="btnGroupAddon" >Tips:</div>
                     </div>
                     <input type="number" style="width:80px"  ng-model="calculations.autoTips" ng-change="calculations.resultsAndTipsAuto()" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                 </div>
                 <div class="col-md-9">
                     <table class="table table-bordered">
-                        <thead  class="thead-light">
+                        <thead  class="bg-color-mainblue table-borders-mainblue">
                             <tr><th>User</th><th>Price</th><th>Price with Tips</th></tr>
                         </thead>
-                        <tbody>
-                            <tr ng-repeat="obj in calculations.resultTableData.results" >
-                                <td>{{obj.user}}</td>
+                        <tbody class='bg-color-greyblue'>
+                            <tr class='table-borders-blue' ng-repeat="obj in calculations.resultTableData.results" >
+                                <td><h5>{{obj.user}}</h5></td>
                                 <td>{{obj.price}} €</td>
                                 <td>{{obj.priceFinal}} €</td> 
                             </tr>

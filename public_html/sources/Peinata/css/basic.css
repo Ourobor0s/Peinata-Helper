@@ -56,3 +56,35 @@
                 background-color: #dff0d8;
                 color: #3c763d;
             }
+            
+            .bg-color-lightblue{
+                background-color: #66ccff !important;
+            }
+            .bg-color-blue{
+                background-color: #0066ff !important;
+            }
+            
+            .bg-color-whiteblue{
+                background-color: #E2ECFF !important;
+            }
+            .bg-color-mainblue{
+                color:white;
+                background-color: #007bff !important;
+            }
+            
+            .bg-color-greyblue{
+                background-color: #F0F3FA !important;
+            }
+            
+            .table-borders-white{
+                border:2px solid white;
+            }
+            
+            .table-borders-blue{
+                border:2px solid #BACFFF;
+            }
+            
+            .table-borders-mainblue{
+                border:2px solid #007bff;
+            }
+            

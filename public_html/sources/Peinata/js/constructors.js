@@ -17,7 +17,7 @@ function Info(totalPrice, discountedPrice, peinataDiscount) {
     this.discountedPrice = discountedPrice;
     this.peinataDiscount = peinataDiscount;
     this.discountedPer = (1 - (discountedPrice / totalPrice)).round(6);
-    this.discountedPercValue = ((peinataDiscount / totalPrice) * 100).round(2)
+    this.discountedPercValue = ((peinataDiscount / totalPrice) * 100).toFixed(2);
             ;
     return this;
 }
