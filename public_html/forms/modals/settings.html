@@ -1,0 +1,42 @@
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Settings</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title">Name:</h4>  
+                <div class="input-group">
+                    <input type="text" class="form-control" style="margin-right:5px" maxlength="16" ng-model="settings.userName" ng-keypress="keyboardHandler.enterKey($event)">
+                    <span><button type="button" class="btn btn-primary btn-lg input-group-addon" ng-click="settings.userAdd()"  ng-disabled="settings.userName === ''"><i class="fa fa-save" style="font-size:20px;"></i></button></span> 
+                </div>
+
+                <div class="alert alert-warning" role="alert" id="userDuplicateName" style="display:none; position:absolute; left:0; right:0;">
+                    This name already exists!
+                </div>
+                <br><br><br>
+                <table class="table table-bordered">
+                    <thead  class="thead-light">
+                        <tr>
+                            <th ng-repeat="column in localData.Columns">{{column}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in localData.Users"> 
+                            <td>{{user.name}}</td>
+                            <td><button type="button" class="btn btn-danger" ng-click="settings.userDelete(user.id)"><i class="fa fa-trash"></i></button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+
+                <div id="tableDiv" style="margin-top: 40px"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>

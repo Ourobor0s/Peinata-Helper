@@ -1,0 +1,41 @@
+<div class="modal fade" id="resultsOldSchoolModal" tabindex="-1" role="dialog" aria-labelledby="oldSchoolModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="oldSchoolModalLabel">Results</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        
+            </div>
+            <div class="modal-body">
+                <!--<h4 class="modal-title">Results:</h4>-->  
+                <div class="input-group" style="">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Tips:</div>
+                    </div>
+                    <input type="number" style="width:80px"  ng-model="calculations.oldSchoolTips" ng-change="calculations.resultsAndTipsOldSchool()" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <table class="table table-bordered">
+                            <thead  class="thead-light">
+                                <tr><th>User</th><th>Price</th><td>Price with Tips</td></tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="user_obj in calculations.resultsOldSchoolData.Users" >
+                                    <td>{{user_obj.name}}</td>
+                                    <td>{{user_obj.price}} €</td>
+                                    <td>{{user_obj.priceFinal}} €</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary"  ng-click="calculations.orderGetObject()" data-dismiss="modal" ng-disabled="calculations.orderText === ''">Create Order</button>-->
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

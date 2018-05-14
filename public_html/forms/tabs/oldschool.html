@@ -1,0 +1,50 @@
+<!-- table -->
+<div class="col-md-9 mx-auto">
+    <div class="row" style="margin-bottom:10px; margin-top:2px;">
+        <div class="col-md-9 mx-auto">
+            <!--<span data-toggle="tooltip" data-placement="left" title="Calculate"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#resultsOldSchoolModal" ng-disabled="!((calculations.oldSchoolData | enoughUsers) && (calculations.oldSchoolData.noErrors))"  ng-click="calculations.resultsOldSchool()" ><i class="fa fa-play" ></i></button> </span> -->
+            <span data-toggle="tooltip" data-placement="left" title="Calculate"><button type="button" class="btn btn-primary" ng-disabled="!((calculations.oldSchoolData | enoughUsers) && (calculations.oldSchoolData.noErrors))"  ng-click="calculations.resultsOldSchool()" ><i class="fa fa-play" ></i></button> </span> 
+            <div style="margin-top:5px; margin-bottom:10px;" class="btn-toolbar">
+                <div class="input-group" style="margin-right:3px">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Total Price:</div>
+                    </div>
+                    <input type="number" style="width:80px"  ng-model="calculations.oldSchoolData.priceTotal" ng-change="calculations.priceCalcOldSchool()" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div>
+                <div class="input-group" style="margin-right:3px">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Discounted Price:</div>
+                    </div>
+                    <input type="text" style="width:80px"  ng-disabled='true' ng-value="calculations.oldSchoolData.priceDiscounted | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div>
+                <div class="input-group" style="margin-right:3px">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Peinata Discount:</div>
+                    </div>
+                    <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.oldSchoolData.peinataDiscount | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div>
+                <div class="input-group" style="margin-right:3px">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Discount Percent:</div>
+                    </div>
+                    <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.oldSchoolData.priceDiscountPerc | percentSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div>
+            </div>
+            <table class="table table-bordered"> 
+                <thead  class="thead-light">
+                    <tr>
+                        <th>User</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in calculations.oldSchoolData.Users"> 
+                        <td>{{user.name}}</td>
+                        <td><input type="text" class="form-control" ng-model="calculations.oldSchoolData.Users[$index].price" style="margin-right:5px" ></td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>                          
+        </div> 
+    </div>
+</div>

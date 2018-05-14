@@ -1,0 +1,18 @@
+<div class="modal fade" id="orderInputModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="orderModalLabel">Order Input</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title">Paste Order:</h4>  
+                <textarea style="white-space: pre-wrap; resize: none; height:29em; width:100%" name="comment" id="clipboardText" ng-model="calculations.orderText" ng-keypress="keyboardHandler.orderInputEnterKey($event)"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"  ng-click="calculations.orderGetObject()" data-dismiss="modal" ng-disabled="calculations.orderText === ''">Create Order</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

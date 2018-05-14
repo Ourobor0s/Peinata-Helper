@@ -1,0 +1,107 @@
+<div class="col-md-8 mx-auto">
+    <div class="col-md-12">
+        <div class="row" style="margin-bottom:10px; margin-top:2px;">
+            <div class="col-md-12" style="padding:0">
+                <div class="btn-toolbar" role="toolbar">
+
+                    <div class="btn-group mr-2 " role="group">
+                        <span style="margin-right:2px" data-toggle="tooltip" data-placement="bottom" title="Input Order"><button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#orderInputModal" ><i class="fa fa-paste"  ></i></button></span> <!--  -->
+                        <!--<span data-toggle="tooltip" data-placement="bottom" title="Calculate"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#resultsModal" ng-click="calculations.results()" ng-disabled="calculations.order | orderCalcEnabled"><i class="fa fa-play" ></i></button> </span> -->
+                        <span data-toggle="tooltip" data-placement="bottom" title="Calculate"><button type="button" class="btn btn-primary" ng-click="calculations.results()" ng-disabled="calculations.order | orderCalcEnabled"><i class="fa fa-play" ></i></button> </span><!-- -->
+
+                    </div>
+                    <div class="btn-group mr-2" role="group">
+                        <span style="margin-right:2px" data-toggle="tooltip" data-placement="bottom" title="Refresh Order" ><button type="button" class="btn btn-primary" ng-click="models.modelsRefresh()" ><i class="fa fa-refresh" ></i></button></span> <!--  -->
+                        <span data-toggle="tooltip" data-placement="bottom" title="Restore Last Order"><button type="button" class="btn btn-primary" ng-click="calculations.orderLoadLastOrder()" ><i class="fa fa-undo" ></i></button></span> <!-- -->
+                    </div>
+
+                </div>
+                <div style="margin-top:5px" class="btn-toolbar">
+                    <div class="input-group" style="margin-right:3px">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" >Total Price:</div>
+                        </div>
+                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.totalPrice | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+                    <div class="input-group" style="margin-right:3px">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" >Discounted Price:</div>
+                        </div>
+                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.discountedPrice | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+                    <div class="input-group" style="margin-right:3px">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Peinata Discount:</div>
+                        </div>
+                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.peinataDiscount | euroSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+                    <div class="input-group" style="margin-right:3px">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Discount Percent:</div>
+                        </div>
+                        <input type="text" style="width:80px" ng-disabled='true' ng-value="calculations.order.info.discountedPercValue | percentSymbol" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table  table-bordered table-striped">
+                <thead><tr><th>User</th></tr></thead>
+                <tbody>
+                    <!-- repeat -->
+                    <tr ng-repeat="(listName, list) in models.users.lists" >
+                        <td >
+                            <h5 class="card-title">{{listName}}</h5>
+                            <div style="min-height:50px !important;"  dnd-list="list">
+                                <table class="table table-hover" >
+                                    <tr ng-repeat="item in list"
+                                        dnd-draggable="item"
+                                        dnd-moved="list.splice($index, 1)"
+                                        dnd-effect-allowed="move"
+                                        dnd-selected="models.users.selected = item"
+                                        ng-class="{
+                                                                    'selected': models.users.selected === item}"
+                                        >
+                                        <td>{{item.label}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron" style="padding:0;">
+                <div ng-repeat="(listName, list) in models.items.lists">
+                    <div  class="card-body simpleDemo">
+                        <h5 class="card-title">{{listName.replace("_", " ");}}</h5>
+                        <ul dnd-list="list" class="list-group list-group-flush">
+                            <!-- The dnd-draggable directive makes an element draggable and will
+                                 transfer the object that was assigned to it. If an element was
+                                 dragged away, you have to remove it from the original list
+                                 yourself using the dnd-moved attribute -->
+                            <li  class="list-group-item" ng-repeat="item in list"
+                                 dnd-draggable="item"
+                                 dnd-moved="list.splice($index, 1)"
+                                 dnd-effect-allowed="move"
+                                 dnd-selected="models.users.selected = item"
+                                 ng-class="{
+                                                             'selected': models.users.selected === item}"
+                                 >
+                                {{item.label}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--                    <div>
+                        <h2>Generated Model</h2>
+                        <pre>{{modelAsJson}}</pre>
+                    </div>-->

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Peinata Helper</title>
+
+        <style></style>
+        <!--general-->
+        <script type="text/javascript" src="sources/General/jquery/3.3.1/jquery.js"></script>
+        <link rel="stylesheet" href="sources/General/jquery-ui/1.12.1/jquery-ui.css">
+        <script src="sources/General/jquery-ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="sources/General/bootstrap/4.1.0/bootstrap.css">
+        <script type="text/javascript" src="sources/General/bootstrap/4.1.0/bootstrap.js" ></script>
+        <script src="sources/General/popper/1.12.9/popper.min.js"></script>
+        <link rel="stylesheet" href="sources/General/fontawesome/4.7.0/css/font-awesome.css">
+        <script src="sources/General/angular/1.6.9/angular.js"></script> 
+        <!--//-->
+        <!--ngToast-->
+        <link rel="stylesheet" href="sources/ngToast/ngToast.css">
+        <script type="text/javascript" src="sources/ngToast/ngToast.js"></script>
+        <script src="sources/General/angular/1.6.9/angular-sanitize.js"></script>
+        <script src="sources/General/angular/1.6.9/angular-animate.js"></script>
+        <link rel="stylesheet" href="sources/ngToast/ngToast-animations.css"> 
+        <!--//-->
+        <!--dndLists-->
+        <script type="text/javascript" src="sources/dndLists/drag-and-drop-lists.js"></script>
+        <!--//-->
+        <!--Peinata-->
+        <link href="sources/Peinata/css/basic.css" rel="stylesheet">
+        <script type="text/javascript" src="sources/Peinata/js/app.js"></script>
+        <script type="text/javascript" src="sources/Peinata/js/enums.js"></script>
+        <script type="text/javascript" src="sources/Peinata/js/constructors.js"></script>
+        <script type="text/javascript" src="sources/Peinata/js/calculations.js"></script>
+        <script type="text/javascript" src="sources/Peinata/js/settings.js"></script>
+        <!--//-->
+        <!--ContactMe-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+        <link href="sources/contactMe/devicons.css" rel="stylesheet">
+        <link href="sources/contactMe/simple-line-icons.css" rel="stylesheet">
+        <link href="sources/contactMe/resume.css" rel="stylesheet">
+
+    </head>
+    <body ng-app="peinata" ng-controller="basic">
+
+        <header>
+            <!--Navbar-->
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:#007bff;">
+                <div class="col-md-8 mx-auto">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentMain" aria-controls="navbarSupportedContentMain" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!--Nav Items-->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContentMain">
+                        <a class="navbar-brand"><font color ="#000080"><b>Πεινάτα Helper</b></font></a>
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="" ng-class="navbar.itemActiveTab === navbar.navTabActive.auto ? 'active' : ''" ng-click="navbar.changeTab(navbar.navTabActive.auto)">Auto <i class="fa fa-wheelchair"></i><span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="" ng-class="navbar.itemActiveTab === navbar.navTabActive.oldschool ? 'active' : ''" ng-click="navbar.changeTab(navbar.navTabActive.oldschool)">Old School<i class="fa fa-hand-paper-o"></i></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Info
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item"  href="" ng-class="navbar.itemActiveTab === navbar.navTabActive.log ? 'active' : ''" ng-click="navbar.changeTab(navbar.navTabActive.log)">Log  <i class="fa fa-file-code-o"></i></a>
+                                    <a class="dropdown-item" href="" ng-class="navbar.itemActiveTab === navbar.navTabActive.patchnotes ? 'active' : ''" ng-click="navbar.changeTab(navbar.navTabActive.patchnotes)">Patch Notes   <i class="fa fa-file-text-o"></i></a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="" ng-class="navbar.itemActiveTab === navbar.navTabActive.contactme ? 'active' : ''" ng-click="navbar.changeTab(navbar.navTabActive.contactme)">Contact me!   <i class="fa fa-envelope-o"></i></a>
+                                </div>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>-->
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <!-- Button settings modal trigger-->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#settingsModal" id="btnSettings" style="font-size:15px;">
+                                <i class="fa fa-gear"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+        <div ng-app="toastController">
+            <toast></toast>
+        </div>
+        <div class="tab-content" style="margin-top:15px">
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.auto ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/auto.html'"></div>
+
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.oldschool ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/oldschool.html'"></div>
+
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.log ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/log.html'"></div>
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.patchnotes ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/patchnotes.html'"></div>
+
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.contactme ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/contactme.html'"></div>
+        </div>>
+
+        <!-- Modals -->
+        <div ng-include="'forms/modals/settings.html'"></div>
+        <div ng-include="'forms/modals/orderInput.html'"></div>
+        <div ng-include="'forms/modals/autoResults.html'"></div>
+        <div ng-include="'forms/modals/oldschoolResults.html'"></div>
+
+    </body> 
+    <!--ContactMe-->
+    <script src="sources/contactMe/bootstrap.bundle.js"></script>
+    <script src="sources/contactMe/jquery.easing.js"></script>
+    <script src="sources/contactMe/resume.js"></script>
+    <!--//-->
+</html>
