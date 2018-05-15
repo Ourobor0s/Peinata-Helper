@@ -85,6 +85,6 @@
             }
             
             .table-borders-mainblue{
-                border:2px solid #007bff;
+                border:2px solid #007bff !important;
             }
             

@@ -30,17 +30,17 @@
                     <input type="text" style="width:90px" ng-disabled='true' ng-value="calculations.oldSchoolData.priceDiscountPerc | percentSymbol" class="form-control bg-color-whiteblue" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                 </div>
             </div>
-            <table class="table table-bordered bg-color-whiteblue "> 
-                <thead  class=" bg-color-mainblue table-borders-mainblue">
+            <table class="table "> 
+                <thead  class=" bg-color-mainblue table-borders-mainblue table-bordered">
                     <tr>
                         <th>User</th>
                         <th>Price</th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody class="bg-color-greyblue">
                     <tr class="table-borders-blue" ng-repeat="user in calculations.oldSchoolData.Users"> 
-                        <td><h5>{{user.name}}</h5></td>
-                        <td><input type="text" class="form-control" ng-model="calculations.oldSchoolData.Users[$index].price" style="margin-right:5px" ></td>
+                        <td class='table-borders-blue'><h5>{{user.name}}</h5></td>
+                        <td class='table-borders-blue'><input type="text" class="form-control" ng-model="calculations.oldSchoolData.Users[$index].price" style="margin-right:5px" ></td>
                     </tr>
                 </tbody>
                 <tfoot></tfoot>

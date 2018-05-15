@@ -13,14 +13,14 @@
                     <input type="number" style="width:80px"  ng-model="calculations.autoTips" ng-change="calculations.resultsAndTipsAuto()" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
                 </div>
                 <div class="col-md-12">
-                    <table class="table table-bordered">
-                        <thead  class="bg-color-mainblue table-borders-mainblue">
-                            <tr><th>User</th><th>Price</th><th>Price with Tips</th></tr>
+                    <table class="table">
+                        <thead  class="bg-color-mainblue table-bordered table-borders-mainblue">
+                            <tr ><th class="table-borders-blue">User</th><th class="table-borders-blue">Price</th><th class="table-borders-blue">Price with Tips</th></tr>
                         </thead>
                         <tbody class='bg-color-greyblue'>
-                            <tr class='table-borders-blue' ng-repeat="obj in calculations.resultTableData.results" >
-                                <td><h5>{{obj.user}}</h5></td>
-                                <td>{{obj.price}} €</td>
+                            <tr  class="table-borders-blue" ng-repeat="obj in calculations.resultTableData.results" >
+                                <td class="table-borders-blue"><h5>{{obj.user}}</h5></td>
+                                <td class="table-borders-blue">{{obj.price}} €</td>
                                 <td>{{obj.priceFinal}} €</td> 
                             </tr>
                         </tbody>

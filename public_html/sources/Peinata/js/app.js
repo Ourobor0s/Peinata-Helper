@@ -117,7 +117,7 @@ app.controller('basic', ['$scope', 'ngToast', function ($scope, ngToast) {
                 if ($scope.calculations.resultTableData.info.noErrors) {
                     if (ValidateCalculations($scope.calculations.resultTableData, $scope.calculations.order)) {
                         if (SetLocalData(localStorageType.LastUserModel, $scope.models.users)) {
-                            ConsoleOut("Model saved.", "calculations.results: Saved model to local storage.", "Save", ConsoleType.log);
+                            ConsoleOut("Order model saved.", "calculations.results: Saved model to local storage.", "Save", ConsoleType.log);
                             $scope.calculations.resultsAndTipsAuto();
                             $('#resultsModal').modal('show');
                         }

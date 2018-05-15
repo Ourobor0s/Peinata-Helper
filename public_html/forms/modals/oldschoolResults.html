@@ -15,15 +15,15 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table table-bordered">
-                            <thead  class="bg-color-mainblue table-borders-mainblue">
+                        <table class="table">
+                            <thead  class="bg-color-mainblue table-borders-mainblue table-bordered">
                                 <tr><th>User</th><th>Price</th><td><b>Price with Tips</b></td></tr>
                             </thead>
                             <tbody class='bg-color-greyblue '>
                                 <tr class='table-borders-blue' ng-repeat="user_obj in calculations.resultsOldSchoolData.Users" >
-                                    <td><h5>{{user_obj.name}}</h5></td>
-                                    <td>{{user_obj.price}} €</td>
-                                    <td>{{user_obj.priceFinal}} €</td>
+                                    <td class='table-borders-blue                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          '><h5>{{user_obj.name}}</h5></td>
+                                    <td class='table-borders-blue'>{{user_obj.price}} €</td>
+                                    <td class='table-borders-blue'>{{user_obj.priceFinal}} €</td>
                                 </tr>
                             </tbody>
                             <tfoot>

@@ -16,16 +16,16 @@
                     This name already exists!
                 </div>
                 <br><br><br>
-                <table class="table table-bordered">
-                    <thead  class="bg-color-mainblue table-bordered">
-                        <tr>
-                            <th ng-repeat="column in localData.Columns">{{column}}</th>
+                <table class="table ">
+                    <thead  class="bg-color-mainblue table-bordered table-borders-mainblue">
+                        <tr >
+                            <th class="table-borders-blue" ng-repeat="column in localData.Columns">{{column}}</th>
                         </tr>
                     </thead>
-                    <tbody class='bg-color-greyblue table-bordered-blue'>
-                        <tr ng-repeat="user in localData.Users"> 
-                            <td><h5>{{user.name}}</h5></td>
-                            <td><button type="button" class="btn btn-danger" ng-click="settings.userDelete(user.id)"><i class="fa fa-trash"></i></button></td>
+                    <tbody class='bg-color-greyblue'>
+                        <tr class="table-borders-blue" ng-repeat="user in localData.Users"> 
+                            <td class="table-borders-blue"><h5>{{user.name}}</h5></td>
+                            <td ><button type="button" class="btn btn-danger" ng-click="settings.userDelete(user.id)"><i class="fa fa-trash"></i></button></td>
                         </tr>
                     </tbody>
                     <tfoot></tfoot>
