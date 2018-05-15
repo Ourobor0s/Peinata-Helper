@@ -94,14 +94,24 @@
             <toast></toast>
         </div>
         <div class="tab-content" style="margin-top:15px">
-            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.auto ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/auto.html'"></div>
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.auto ? 'active' : ''" class="tab-pane" >
+                <div ng-include="'forms/tabs/auto.html'"></div>
+            </div>
 
-            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.oldschool ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/oldschool.html'"></div>
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.oldschool ? 'active' : ''" class="tab-pane">
+                <div ng-include="'forms/tabs/oldschool.html'"></div>
+            </div>
 
-            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.log ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/log.html'"></div>
-            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.patchnotes ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/patchnotes.html'"></div>
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.log ? 'active' : ''" class="tab-pane">
+                <div ng-include="'forms/tabs/log.html'"></div>
+            </div>
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.patchnotes ? 'active' : ''" class="tab-pane">
+                <div ng-include="'forms/tabs/patchnotes.html'"></div>
+            </div>
 
-            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.contactme ? 'active' : ''" class="tab-pane" ng-include="'forms/tabs/contactme.html'"></div>
+            <div ng-class="navbar.itemActiveTab === navbar.navTabActive.contactme ? 'active' : ''" class="tab-pane">
+                <div ng-include="'forms/tabs/contactme.html'"></div>
+            </div>
         </div>
 
         <!-- Modals -->
