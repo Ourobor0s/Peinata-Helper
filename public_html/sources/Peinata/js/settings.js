@@ -37,7 +37,7 @@ function ValidateStorageSupport() {
     }
 }
 
-function LogSave(message, type, details = "") {//'{"log":{},"warn":{}}'
+function LogSave(message, type, details) {//'{"log":{},"warn":{}}'
     var date = new Date();
     var obj = GetLocalData(localStorageType.Console);
     if (!(date.today() in obj[type])) {//if the date isnt already registered, creates todays attribute
@@ -139,7 +139,7 @@ function GetRootObject(type) {
     } else if (type === localStorageType.LastUserModel) {
         return angular.toJson(GetUsersName());
     } else if (type === localStorageType.Console) {
-        return '{"log":{},"warn":{},"dev{}}';
+        return '{"log":{},"warn":{},"dev":{}}';
     }
 }
 
